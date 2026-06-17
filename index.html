@@ -59,6 +59,7 @@
   }
   .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
   .logo{display:flex;align-items:baseline;gap:9px;font-weight:800;font-size:20px;letter-spacing:-.03em}
+  .logo img{height:26px;width:auto;display:block;align-self:center}
   .logo .mark{width:11px;height:11px;border-radius:50%;background:var(--accent);display:inline-block;transform:translateY(-1px)}
   .logo small{font-size:9.5px;letter-spacing:.22em;color:var(--muted);font-weight:700}
   .navlinks{display:flex;align-items:center;gap:30px}
@@ -149,6 +150,7 @@
   .team{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
   .member{display:flex;gap:20px;background:var(--base);border:1px solid var(--border);border-radius:var(--r);padding:28px}
   .avatar{width:64px;height:64px;border-radius:50%;flex:0 0 64px;display:grid;place-items:center;font-family:var(--serif);font-size:26px;color:#fff;font-weight:700}
+  img.avatar{object-fit:cover;display:block}
   .av-a{background:var(--accent)}
   .av-b{background:var(--ink)}
   .member h4{font-size:18px;font-weight:800}
@@ -205,11 +207,7 @@
 <!-- HEADER -->
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#">
-      <span class="mark"></span>sheventures
-      <small>FOR GOOD FOUNDERS</small>
-      <span class="placeholder-tag">로고 placeholder</span>
-    </a>
+    <a class="logo" href="#"><img src="logo.png" alt="sheventures — for good founders" onerror="this.outerHTML='<span class=mark></span>sheventures<small>FOR GOOD FOUNDERS</small>'"></a>
     <nav class="navlinks">
       <a href="#whatwedo">우리가 하는 일</a>
       <a href="#team">팀</a>
@@ -225,7 +223,7 @@
     <p class="eyebrow reveal">For Good Founders</p>
     <h1 class="reveal">좋은 기업가가 더 많은 세상의 문제를 해결하도록,<br><span class="hl">성장의 순간에 가장 먼저 떠오르는 파트너</span>가 되겠습니다.</h1>
     <p class="attitude reveal">좋은 기업가는, 솔루션은 바꿀지언정 <b>문제는 포기하지 않는</b> 사람입니다.</p>
-    <p class="sub reveal">그 길의 가장 막막한 구간을, 함께 헤쳐 나갑니다.</p>
+    <p class="sub reveal">그 길의 가장 막막한 구간을 쉬벤처스가 함께 헤쳐 갑니다.</p>
     <div class="cta reveal">
       <a class="btn btn-primary btn-arrow" href="#contact">문의하기 <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
@@ -333,7 +331,7 @@
     </div>
     <div class="team">
       <div class="member reveal">
-        <div class="avatar av-a">하</div>
+        <img class="avatar av-a" src="team/haisoo.jpg" alt="하이수" onerror="this.outerHTML='<div class=&quot;avatar av-a&quot;>하</div>'">
         <div>
           <h4>하이수</h4>
           <div class="role">대표이사 · CEO</div>
@@ -343,11 +341,10 @@
             <li>前 Bain &amp; Company 이사 · 매일유업 · 삼성전자</li>
             <li>연세대 경영 / Univ. of Chicago Booth MBA</li>
           </ul>
-          <span class="note">프로필 이미지 placeholder</span>
         </div>
       </div>
       <div class="member reveal">
-        <div class="avatar av-b">이</div>
+        <img class="avatar av-b" src="team/hyerin.jpg" alt="이혜린" onerror="this.outerHTML='<div class=&quot;avatar av-b&quot;>이</div>'">
         <div>
           <h4>이혜린</h4>
           <div class="role">부대표 · COO</div>
@@ -357,7 +354,6 @@
             <li>前 그로잉맘 공동창업 후 매각 · 다올투자증권</li>
             <li>이화여대 교육학 석사 / 고려대 창업학 박사과정</li>
           </ul>
-          <span class="note">프로필 이미지 placeholder</span>
         </div>
       </div>
     </div>
@@ -399,9 +395,9 @@
       <p>블로그는 인블로그로 운영됩니다.</p>
     </div>
     <div class="posts">
-      <a class="post reveal" href="https://sheventures.inblog.io/" target="_blank" rel="noopener"><div class="thumb"></div><div class="body"><div class="cat">컴퍼니 빌딩</div><h4>대표가 혼자 결정을 짊어지지 않으려면</h4><p>초기 의사결정의 무게를 나누는 법에 대하여.</p></div></a>
-      <a class="post reveal" href="https://sheventures.inblog.io/" target="_blank" rel="noopener"><div class="thumb"></div><div class="body"><div class="cat">AI 실행</div><h4>가설 검증을 30분의 1로 줄이는 법</h4><p>AI를 활용한 초고속 린 실행의 현실적 적용기.</p></div></a>
-      <a class="post reveal" href="https://sheventures.inblog.io/" target="_blank" rel="noopener"><div class="thumb"></div><div class="body"><div class="cat">맘프러너</div><h4>워킹맘이 사업 모델을 갖춘 창업으로</h4><p>퍼스널 브랜딩 너머, 지속가능한 BM으로 가는 다리.</p></div></a>
+      <a class="post reveal" href="https://sheventures.inblog.io/%EC%B0%BD%EC%97%85%EC%9E%90-%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8-%EB%8B%A4%EB%93%A4-%EB%B0%94%EB%B9%A0-%EB%B3%B4%EC%9D%B4%EA%B8%B4-%ED%95%9C%EB%8D%B0-%EB%AD%98-%ED%95%98%EA%B3%A0-%EC%9E%88%EB%8A%94%EC%A7%80%EB%8A%94-%EB%AA%A8%EB%A5%B4%EA%B2%A0%EC%96%B4%EC%9A%94-53985" target="_blank" rel="noopener"><div class="thumb"></div><div class="body"><div class="cat">창업자 오답노트</div><h4>다들 바빠 보이긴 한데… 뭘 하고 있는지는 모르겠어요</h4></div></a>
+      <a class="post reveal" href="https://sheventures.inblog.io/%EC%B0%BD%EC%97%85%EC%9E%90-%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8-%EA%B7%B8%EB%83%A5-%EB%82%B4%EA%B0%80-%ED%95%98%EB%8A%94-%EA%B2%8C-%EB%B9%A0%EB%A5%B4%EB%8B%88%EA%B9%8C%EC%9A%94-53984" target="_blank" rel="noopener"><div class="thumb"></div><div class="body"><div class="cat">창업자 오답노트</div><h4>그냥 내가 하는 게 빠르니까요</h4></div></a>
+      <a class="post reveal" href="https://sheventures.inblog.io/%EC%B0%BD%EC%97%85%EC%9E%90-%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8-%EB%AA%A8%EB%93%A0-%EA%B2%8C-%EB%A9%88%EC%B6%94%EB%8A%94-%EC%88%9C%EA%B0%84-%EB%8C%80%ED%91%9C%EB%8B%98%EC%9D%B4-%EC%95%88-%EA%B3%84%EC%85%94%EC%84%9C%EC%9A%94-53983" target="_blank" rel="noopener"><div class="thumb"></div><div class="body"><div class="cat">창업자 오답노트</div><h4>모든 게 멈추는 순간: '대표님이 안 계셔서요'</h4></div></a>
     </div>
     <div style="margin-top:34px">
       <a class="btn btn-ghost btn-arrow" href="https://sheventures.inblog.io/" target="_blank" rel="noopener">블로그 전체 보기 <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
