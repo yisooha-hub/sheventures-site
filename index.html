@@ -3,7 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>쉬벤처스 — 좋은 기업가를 위한 실행중심 성장파트너 (목업)</title>
+<title>쉬벤처스 — 좋은 기업가를 위한 실행중심 성장파트너</title>
+<meta name="description" content="좋은 기업가가 세상의 더 많은 문제를 해결하도록 돕습니다. 성장의 순간, 가장 먼저 떠오르는 파트너 쉬벤처스.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="쉬벤처스">
+<meta property="og:title" content="쉬벤처스 — 좋은 기업가를 위한 실행중심 성장파트너">
+<meta property="og:description" content="좋은 기업가가 세상의 더 많은 문제를 해결하도록 돕습니다. 성장의 순간, 가장 먼저 떠오르는 파트너 쉬벤처스.">
+<meta property="og:url" content="https://sheventures-site.vercel.app/">
+<meta property="og:image" content="https://sheventures-site.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="쉬벤처스 — 좋은 기업가를 위한 실행중심 성장파트너">
+<meta name="twitter:description" content="좋은 기업가가 세상의 더 많은 문제를 해결하도록 돕습니다. 성장의 순간, 가장 먼저 떠오르는 파트너 쉬벤처스.">
+<meta name="twitter:image" content="https://sheventures-site.vercel.app/og-image.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +44,8 @@
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
     letter-spacing:-0.01em;
+    word-break:keep-all;
+    overflow-wrap:break-word;
   }
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
@@ -40,7 +55,7 @@
   }
   h1,h2,h3,h4,.philo,.teamhead,.attitude,.solution .big,.finalcta h2,.post h4,.card h3{word-break:keep-all}
   .btn{
-    display:inline-flex;align-items:center;gap:8px;
+    display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
     padding:13px 22px;border-radius:999px;font-weight:700;font-size:15px;
     transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
   }
@@ -58,7 +73,7 @@
     border-bottom:1px solid var(--border);
   }
   .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .logo{display:flex;align-items:baseline;gap:9px;font-weight:800;font-size:20px;letter-spacing:-.03em}
+  .logo{display:flex;align-items:baseline;gap:9px;font-weight:800;font-size:20px;letter-spacing:-.03em;white-space:nowrap}
   .logo img{height:26px;width:auto;display:block;align-self:center}
   .logo .mark{width:11px;height:11px;border-radius:50%;background:var(--accent);display:inline-block;transform:translateY(-1px)}
   .logo small{font-size:9.5px;letter-spacing:.22em;color:var(--muted);font-weight:700}
@@ -68,6 +83,13 @@
   .nav .btn{padding:9px 18px;font-size:14px}
   .placeholder-tag{font-size:9px;color:var(--muted);border:1px dashed var(--border);border-radius:6px;padding:1px 5px;letter-spacing:.04em;vertical-align:middle;margin-left:6px}
   @media(max-width:780px){.navlinks a:not(.btn){display:none}}
+  @media(max-width:560px){
+    .nav{height:60px}
+    .logo{font-size:17px;gap:7px}
+    .logo img{height:22px}
+    .logo small{display:none}            /* 텍스트 대체본일 때 FOR GOOD FOUNDERS 숨김(로고 이미지엔 이미 포함) */
+    .nav .btn{padding:8px 14px;font-size:13px}
+  }
 
   /* ---------- Hero ---------- */
   .hero{padding:96px 0 78px;position:relative;overflow:hidden}
