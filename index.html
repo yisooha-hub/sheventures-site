@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>쉬벤처스 — 좋은 기업가를 위한 실행중심 성장파트너 (목업)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15171C;
+    --muted:#5B6470;
+    --base:#FFFFFF;
+    --surface:#F4F6F8;
+    --border:#E7EAEE;
+    --accent:#10B3A0;          /* 1차 액센트: 틸 (코발트 원하면 #1F5EFF) */
+    --accent-soft:#E4F6F3;     /* 틸 소프트 (코발트 시 #EAF0FF) */
+    --maxw:1120px;
+    --r:16px;
+    --serif:"Gowun Batang", serif;
+    --sans:"Pretendard Variable","Pretendard",-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--base);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-size:14.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:16px;
+  }
+  h1,h2,h3,h4,.philo,.teamhead,.attitude,.solution .big,.finalcta h2,.post h4,.card h3{word-break:keep-all}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 22px;border-radius:999px;font-weight:700;font-size:15px;
+    transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 20px rgba(16,179,160,.24)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(16,179,160,.34)}
+  .btn-ghost{border:1.5px solid var(--border);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn-arrow svg{width:16px;height:16px;transition:transform .2s ease}
+  .btn:hover .btn-arrow svg{transform:translateX(3px)}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.78);backdrop-filter:saturate(150%) blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:baseline;gap:9px;font-weight:800;font-size:20px;letter-spacing:-.03em}
+  .logo .mark{width:11px;height:11px;border-radius:50%;background:var(--accent);display:inline-block;transform:translateY(-1px)}
+  .logo small{font-size:9.5px;letter-spacing:.22em;color:var(--muted);font-weight:700}
+  .navlinks{display:flex;align-items:center;gap:30px}
+  .navlinks a{font-size:15px;font-weight:600;color:#33373F}
+  .navlinks a:hover{color:var(--accent)}
+  .nav .btn{padding:9px 18px;font-size:14px}
+  .placeholder-tag{font-size:9px;color:var(--muted);border:1px dashed var(--border);border-radius:6px;padding:1px 5px;letter-spacing:.04em;vertical-align:middle;margin-left:6px}
+  @media(max-width:780px){.navlinks a:not(.btn){display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:96px 0 78px;position:relative;overflow:hidden}
+  .hero:after{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle at center, var(--accent-soft), transparent 70%);z-index:-1;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:700;letter-spacing:-.01em;line-height:1.5;
+    font-size:clamp(20px,2.95vw,33px);max-width:none;word-break:keep-all;
+  }
+  .hero h1 .hl{color:var(--accent)}
+  .hero .attitude{margin-top:26px;font-size:clamp(16.5px,1.9vw,20px);font-weight:600;color:var(--ink);max-width:44ch;line-height:1.6}
+  .hero .attitude b{color:var(--accent)}
+  .hero p.sub{margin-top:12px;font-size:17px;color:var(--muted);max-width:46ch}
+  .hero .cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+
+  /* ---------- Section scaffolding ---------- */
+  section{padding:84px 0}
+  .sec-head{max-width:620px;margin-bottom:48px}
+  .sec-head h2{font-size:clamp(24px,3vw,33px);font-weight:800;letter-spacing:-.025em;line-height:1.3}
+  .sec-head h2 b{color:var(--accent)}
+  .sec-head p{margin-top:14px;color:var(--muted);font-size:17px}
+  .why-points{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .why-points li{border-top:2px solid var(--accent);padding-top:18px;font-size:16.5px;color:#2C313A;line-height:1.6}
+  @media(max-width:780px){.why-points{grid-template-columns:1fr}}
+  .alt{background:var(--surface)}
+
+  /* ---------- Problem ---------- */
+  .problems{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .problem{background:var(--base);border:1px solid var(--border);border-radius:var(--r);padding:30px 26px}
+  .problem .n{font-family:var(--serif);font-size:30px;color:var(--accent);line-height:1}
+  .problem p{margin-top:16px;font-size:16.5px;color:#2C313A;line-height:1.6}
+  @media(max-width:780px){.problems{grid-template-columns:1fr}}
+
+  /* ---------- Solution band ---------- */
+  .solution{text-align:center;padding:90px 0}
+  .solution .big{font-family:var(--serif);font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-.01em}
+  .solution .big b{color:var(--accent)}
+  .solution p{margin:22px auto 0;max-width:40ch;color:var(--muted);font-size:18px}
+
+  /* ---------- What we do ---------- */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{
+    background:var(--base);border:1px solid var(--border);border-radius:var(--r);padding:34px 32px;
+    position:relative;transition:transform .2s ease, box-shadow .25s ease, border-color .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(21,23,28,.08);border-color:#d4d8df}
+  .card .kicker{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.02em}
+  .card h3{font-size:21px;font-weight:800;letter-spacing:-.02em;margin:12px 0 14px;line-height:1.35}
+  .card p{color:#444A54;font-size:15.5px;line-height:1.66}
+  .badge{position:absolute;top:22px;right:22px;font-size:11px;font-weight:700;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:3px 10px;border-radius:999px}
+  .card .more{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-weight:700;font-size:14px;color:var(--accent)}
+  .card .more svg{width:15px;height:15px;transition:transform .2s}
+  .card:hover .more svg{transform:translateX(4px)}
+  @media(max-width:780px){.cards{grid-template-columns:1fr}}
+
+  /* ---------- Values ---------- */
+  .values{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .value{padding:30px 4px;border-top:2px solid var(--ink)}
+  .value .k{font-size:20px;font-weight:800;letter-spacing:-.02em}
+  .value .en{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-left:8px}
+  .value p{margin-top:12px;color:var(--muted);font-size:15.5px;line-height:1.6}
+  .philo{font-family:var(--serif);font-size:clamp(19px,2.4vw,26px);line-height:1.62;max-width:30ch;color:var(--ink)}
+  .values-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  @media(max-width:880px){.values-grid{grid-template-columns:1fr;gap:36px}.values{grid-template-columns:1fr}}
+
+  /* ---------- Why ---------- */
+  .why{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .why .stat{font-family:var(--serif);font-size:clamp(40px,6vw,68px);font-weight:700;color:var(--accent);line-height:1}
+  .why .stat small{display:block;font-family:var(--sans);font-size:16px;color:var(--ink);font-weight:700;margin-top:20px;line-height:1.55;letter-spacing:-.01em}
+  .why ul{list-style:none;display:flex;flex-direction:column;gap:16px}
+  .why li{padding-left:28px;position:relative;font-size:16.5px;color:#2C313A}
+  .why li:before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:3px;background:var(--accent)}
+  @media(max-width:780px){.why{grid-template-columns:1fr;gap:30px}}
+
+  /* ---------- Team ---------- */
+  .teamhead{font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.4;max-width:24ch}
+  .teamhead b{color:var(--accent)}
+  .team{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .member{display:flex;gap:20px;background:var(--base);border:1px solid var(--border);border-radius:var(--r);padding:28px}
+  .avatar{width:64px;height:64px;border-radius:50%;flex:0 0 64px;display:grid;place-items:center;font-family:var(--serif);font-size:26px;color:#fff;font-weight:700}
+  .av-a{background:var(--accent)}
+  .av-b{background:var(--ink)}
+  .member h4{font-size:18px;font-weight:800}
+  .member .role{font-size:13.5px;color:var(--accent);font-weight:700;margin:2px 0 12px}
+  .member ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+  .member li{font-size:13.5px;color:var(--muted);line-height:1.45}
+  @media(max-width:780px){.team{grid-template-columns:1fr}}
+
+  /* ---------- Partner marquee ---------- */
+  .partners{padding:64px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .partners .lbl{text-align:center;font-size:13.5px;color:var(--muted);font-weight:600;margin-bottom:30px}
+  .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .track{display:flex;gap:18px;width:max-content;animation:scroll 28s linear infinite}
+  .partners:hover .track{animation-play-state:paused}
+  .chip{border:1px solid var(--border);border-radius:10px;padding:13px 22px;font-weight:700;font-size:15px;color:#41464E;white-space:nowrap;background:var(--base);display:inline-flex;align-items:center}
+  .plogo{height:30px;width:auto;object-fit:contain;filter:grayscale(100%);opacity:.78;transition:opacity .2s,filter .2s}
+  .plogo:hover{filter:grayscale(0);opacity:1}
+  @keyframes scroll{to{transform:translateX(calc(-50% - 9px))}}
+
+  /* ---------- Blog ---------- */
+  .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .post{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--base);transition:transform .2s,box-shadow .25s}
+  .post:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(21,23,28,.08)}
+  .post .thumb{height:140px;background:linear-gradient(135deg,var(--accent-soft),#fff)}
+  .post .body{padding:22px}
+  .post .cat{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.04em}
+  .post h4{font-size:17px;font-weight:800;letter-spacing:-.02em;margin:10px 0 8px;line-height:1.4}
+  .post p{font-size:14px;color:var(--muted);line-height:1.55}
+  @media(max-width:780px){.posts{grid-template-columns:1fr}}
+
+  /* ---------- Final CTA ---------- */
+  .finalcta{background:var(--ink);color:#fff;text-align:center;padding:96px 0;border-radius:0}
+  .finalcta h2{font-family:var(--serif);font-size:clamp(26px,3.6vw,40px);font-weight:700;line-height:1.4;max-width:22ch;margin:0 auto}
+  .finalcta .cta{margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .finalcta .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff}
+  .finalcta .btn-ghost:hover{border-color:#fff}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--base);border-top:1px solid var(--border);padding:54px 0 64px}
+  .foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .foot .biz{font-size:13.5px;color:var(--muted);line-height:1.9}
+  .foot .biz .nm{color:var(--ink);font-weight:800;font-size:15px;letter-spacing:-.02em}
+  .foot a.mail{color:var(--accent);font-weight:600}
+  .foot .ft-links{display:flex;flex-direction:column;gap:9px;font-size:14px;color:#41464E;font-weight:600}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  .note{display:inline-block;margin-top:8px;font-size:11px;color:var(--muted);border:1px dashed var(--border);border-radius:6px;padding:2px 8px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">
+      <span class="mark"></span>sheventures
+      <small>FOR GOOD FOUNDERS</small>
+      <span class="placeholder-tag">로고 placeholder</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#whatwedo">우리가 하는 일</a>
+      <a href="#team">팀</a>
+      <a href="https://sheventures.inblog.io/" target="_blank" rel="noopener">블로그</a>
+      <a class="btn btn-primary" href="#contact">문의하기</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow reveal">For Good Founders</p>
+    <h1 class="reveal">좋은 기업가가 더 많은 세상의 문제를 해결하도록,<br><span class="hl">성장의 순간에 가장 먼저 떠오르는 파트너</span>가 되겠습니다.</h1>
+    <p class="attitude reveal">좋은 기업가는, 솔루션은 바꿀지언정 <b>문제는 포기하지 않는</b> 사람입니다.</p>
+    <p class="sub reveal">그 길의 가장 막막한 구간을, 함께 헤쳐 나갑니다.</p>
+    <div class="cta reveal">
+      <a class="btn btn-primary btn-arrow" href="#contact">문의하기 <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Problem</p>
+      <h2>이런 고민, 익숙하신가요?</h2>
+      <p>초기 기업이 가장 먼저 부딪히는 건 결국 '사람'과 '실행'의 문제입니다.</p>
+    </div>
+    <div class="problems">
+      <div class="problem reveal"><div class="n">01</div><p>초기 팀에 정작 필요한 건 사람인데, 그 사람을 구하는 일이 제일 어렵습니다.</p></div>
+      <div class="problem reveal"><div class="n">02</div><p>대표 혼자 모든 의사결정을 짊어집니다. 옆에서 함께 판단해 줄 사람이 없습니다.</p></div>
+      <div class="problem reveal"><div class="n">03</div><p>좋은 아이디어는 많은데, 첫 실행을 혼자 만들지 못한 채 멈춰 있습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<div class="wrap">
+  <div class="solution reveal">
+    <p class="eyebrow" style="text-align:center">Our Solution</p>
+    <div class="big">CTO·CMO는 구해도, <b>2인자는 못 구합니다.</b></div>
+    <p>쉬벤처스는 그 빈자리를 채웁니다. 결정의 무게를 나눠 지고,<br>가장 바쁜 초기 실무까지 함께 해냅니다.</p>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<section id="whatwedo" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What We Do</p>
+      <h2>네 가지 방식으로, 좋은 기업가의 성장에 함께합니다.</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="kicker">컴퍼니 빌딩</div>
+        <h3>창업자의 오른팔이 되어, 곁에서 함께 결정합니다.</h3>
+        <p>파트타임 CSO·COO로 합류해, 흩어진 의사결정을 정리하고 초기 실무와 팀 세팅까지 함께합니다. 대표 혼자 짊어지던 짐을 나눠 듭니다.</p>
+        <span class="more">자세히 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="card reveal">
+        <div class="kicker">교육·멘토링 프로그램 운영</div>
+        <h3>프로그램이 끝난 뒤에도 살아남는 창업자를 길러냅니다.</h3>
+        <p>기관과 액셀러레이터의 육성 프로그램을 함께 기획하거나 맡아 운영합니다. 워크숍부터 멘토링, IR 준비까지 — 현장에서 검증된 방식으로 창업자가 한 단계 올라서게 합니다.</p>
+        <span class="more">자세히 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="card reveal">
+        <div class="kicker">파운더스랩</div>
+        <h3>마음은 정했는데, 첫 걸음이 안 떨어지는 분께.</h3>
+        <p>회사를 다니며 창업을 준비하는 분, 자기 일을 갖고 싶은 워킹맘 — 결심을 첫 가설과 첫 실행으로 바꾸는 정기 미팅 파트너가 되어, 사업 모델을 갖춘 창업으로 건너가도록 돕습니다.</p>
+        <span class="more">자세히 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <div class="card reveal">
+        <span class="badge">확장 영역</span>
+        <div class="kicker">PE 포트폴리오사 지원</div>
+        <h3>포트폴리오사의 다음 단계를, 안에서 함께 풉니다.</h3>
+        <p>이미 자리 잡은 조직이 다음 성장 단계로 넘어갈 때, 의사결정 옆자리에서 변화 관리를 돕습니다. VC·액셀러레이터·PE가 포트폴리오사에 믿고 맡길 수 있는 파트너로 함께합니다.</p>
+        <span class="more">자세히 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How We Work</p>
+      <h2>세 가지 기준으로 일하고, 결정합니다.</h2>
+    </div>
+    <div class="values">
+      <div class="value reveal"><span class="k">균형</span><span class="en">Balance</span><p>일과 삶, 속도와 안정 사이의 균형을 지키며 일합니다.</p></div>
+      <div class="value reveal"><span class="k">성장</span><span class="en">Growth</span><p>하던 대로 하지 않고 항상 더 나은 방법을 찾습니다.</p></div>
+      <div class="value reveal"><span class="k">지속가능성</span><span class="en">Sustainability</span><p>지속가능성을 전제로 사업모델을 만들고 의사결정합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why sheventures</p>
+      <h2>직접 0에서 1을 만들어 본 사람들이 돕습니다.</h2>
+    </div>
+    <ul class="why-points reveal">
+      <li>현장의 어려움을 가장 빨리 알고, 적재적소에 투입합니다.</li>
+      <li>지금 무엇이 급한지 먼저 알아채고, 현실적이고 직접적으로 돕습니다.</li>
+      <li>숫자경영과 AI 활용, 두 개의 렌즈로 빠르게 검증하고 끝까지 완주합니다.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Team</p>
+      <h2>누적 <b>100억+</b> 자금조달, 0에서 1을 직접 경험한 창업자 출신 팀입니다.</h2>
+    </div>
+    <div class="team">
+      <div class="member reveal">
+        <div class="avatar av-a">하</div>
+        <div>
+          <h4>하이수</h4>
+          <div class="role">대표이사 · CEO</div>
+          <ul>
+            <li>現 여성 헬스케어 기업 CSO (Fractional)</li>
+            <li>前 원더스랩 CSO · 더패밀리랩 대표</li>
+            <li>前 Bain &amp; Company 이사 · 매일유업 · 삼성전자</li>
+            <li>연세대 경영 / Univ. of Chicago Booth MBA</li>
+          </ul>
+          <span class="note">프로필 이미지 placeholder</span>
+        </div>
+      </div>
+      <div class="member reveal">
+        <div class="avatar av-b">이</div>
+        <div>
+          <h4>이혜린</h4>
+          <div class="role">부대표 · COO</div>
+          <ul>
+            <li>現 시니어 기업 CSO (Fractional)</li>
+            <li>前 원더스랩 COO · 안드레이아 부대표</li>
+            <li>前 그로잉맘 공동창업 후 매각 · 다올투자증권</li>
+            <li>이화여대 교육학 석사 / 고려대 창업학 박사과정</li>
+          </ul>
+          <span class="note">프로필 이미지 placeholder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+  <p class="lbl">이런 기관들과 함께해 왔습니다</p>
+  <div class="marquee">
+    <div class="track">
+      <img class="plogo" src="logos/theinventionlab.png" alt="더인벤션랩" onerror="this.outerHTML='<span class=chip>더인벤션랩</span>'">
+      <img class="plogo" src="logos/markncompany.png" alt="마크앤컴퍼니" onerror="this.outerHTML='<span class=chip>마크앤컴퍼니</span>'">
+      <img class="plogo" src="logos/maeum-investment.png" alt="마음인베스트먼트" onerror="this.outerHTML='<span class=chip>마음인베스트먼트</span>'">
+      <img class="plogo" src="logos/quantify-incubator.png" alt="콴티파이인큐베이터" onerror="this.outerHTML='<span class=chip>콴티파이인큐베이터</span>'">
+      <img class="plogo" src="logos/incheon-ccei.png" alt="인천창조경제혁신센터" onerror="this.outerHTML='<span class=chip>인천창조경제혁신센터</span>'">
+      <img class="plogo" src="logos/kovwa.png" alt="한국여성벤처협회" onerror="this.outerHTML='<span class=chip>한국여성벤처협회</span>'">
+      <img class="plogo" src="logos/ewha-holdings.png" alt="이화여자대학교 기술지주" onerror="this.outerHTML='<span class=chip>이화여자대학교 기술지주</span>'">
+      <img class="plogo" src="logos/sba.png" alt="서울산업진흥원" onerror="this.outerHTML='<span class=chip>서울산업진흥원</span>'">
+      <!-- 무한 루프용 복제 -->
+      <img class="plogo" src="logos/theinventionlab.png" alt="더인벤션랩" onerror="this.outerHTML='<span class=chip>더인벤션랩</span>'">
+      <img class="plogo" src="logos/markncompany.png" alt="마크앤컴퍼니" onerror="this.outerHTML='<span class=chip>마크앤컴퍼니</span>'">
+      <img class="plogo" src="logos/maeum-investment.png" alt="마음인베스트먼트" onerror="this.outerHTML='<span class=chip>마음인베스트먼트</span>'">
+      <img class="plogo" src="logos/quantify-incubator.png" alt="콴티파이인큐베이터" onerror="this.outerHTML='<span class=chip>콴티파이인큐베이터</span>'">
+      <img class="plogo" src="logos/incheon-ccei.png" alt="인천창조경제혁신센터" onerror="this.outerHTML='<span class=chip>인천창조경제혁신센터</span>'">
+      <img class="plogo" src="logos/kovwa.png" alt="한국여성벤처협회" onerror="this.outerHTML='<span class=chip>한국여성벤처협회</span>'">
+      <img class="plogo" src="logos/ewha-holdings.png" alt="이화여자대학교 기술지주" onerror="this.outerHTML='<span class=chip>이화여자대학교 기술지주</span>'">
+      <img class="plogo" src="logos/sba.png" alt="서울산업진흥원" onerror="this.outerHTML='<span class=chip>서울산업진흥원</span>'">
+    </div>
+  </div>
+</div>
+
+<!-- BLOG -->
+<section id="blog" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Insights</p>
+      <h2>현장에서 쌓인 생각을 나눕니다.</h2>
+      <p>블로그는 인블로그로 운영됩니다.</p>
+    </div>
+    <div class="posts">
+      <a class="post reveal" href="https://sheventures.inblog.io/" target="_blank" rel="noopener"><div class="thumb"></div><div class="body"><div class="cat">컴퍼니 빌딩</div><h4>대표가 혼자 결정을 짊어지지 않으려면</h4><p>초기 의사결정의 무게를 나누는 법에 대하여.</p></div></a>
+      <a class="post reveal" href="https://sheventures.inblog.io/" target="_blank" rel="noopener"><div class="thumb"></div><div class="body"><div class="cat">AI 실행</div><h4>가설 검증을 30분의 1로 줄이는 법</h4><p>AI를 활용한 초고속 린 실행의 현실적 적용기.</p></div></a>
+      <a class="post reveal" href="https://sheventures.inblog.io/" target="_blank" rel="noopener"><div class="thumb"></div><div class="body"><div class="cat">맘프러너</div><h4>워킹맘이 사업 모델을 갖춘 창업으로</h4><p>퍼스널 브랜딩 너머, 지속가능한 BM으로 가는 다리.</p></div></a>
+    </div>
+    <div style="margin-top:34px">
+      <a class="btn btn-ghost btn-arrow" href="https://sheventures.inblog.io/" target="_blank" rel="noopener">블로그 전체 보기 <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="contact" class="finalcta">
+  <div class="wrap">
+    <h2 class="reveal">지금 함께 풀고 싶은 문제가 있다면, 편하게 연락 주세요.</h2>
+    <div class="cta reveal">
+      <a class="btn btn-primary btn-arrow" href="mailto:start@sheventures.kr">문의하기 <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <div class="biz">
+      <div class="nm">주식회사 쉬벤처스 (She Ventures)</div>
+      대표이사 하이수 · 사업자등록번호 416-88-03082<br>
+      사업제안 및 문의 : <a class="mail" href="mailto:start@sheventures.kr">start@sheventures.kr</a>
+    </div>
+    <div class="ft-links">
+      <a href="#whatwedo">우리가 하는 일</a>
+      <a href="#team">팀</a>
+      <a href="https://sheventures.inblog.io/" target="_blank" rel="noopener">블로그</a>
+      <a href="#contact">문의</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay = (Math.min(i,6)*60)+'ms';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
