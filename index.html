@@ -81,8 +81,9 @@
   .navlinks a{font-size:15px;font-weight:600;color:#33373F}
   .navlinks a:hover{color:var(--accent)}
   .nav .btn{padding:9px 18px;font-size:14px}
+  .navlinks a.btn-primary{color:#fff}
   .placeholder-tag{font-size:9px;color:var(--muted);border:1px dashed var(--border);border-radius:6px;padding:1px 5px;letter-spacing:.04em;vertical-align:middle;margin-left:6px}
-  @media(max-width:780px){.navlinks a:not(.btn){display:none}}
+  @media(max-width:780px){.navlinks a{display:none}}
   @media(max-width:560px){
     .nav{height:60px}
     .logo{font-size:17px;gap:7px}
@@ -185,11 +186,11 @@
   .partners{padding:64px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
   .partners .lbl{text-align:center;font-size:13.5px;color:var(--muted);font-weight:600;margin-bottom:30px}
   .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-  .track{display:flex;gap:18px;width:max-content;animation:scroll 28s linear infinite}
+  .track{display:flex;align-items:center;gap:46px;width:max-content;animation:scroll 28s linear infinite}
   .partners:hover .track{animation-play-state:paused}
   .chip{border:1px solid var(--border);border-radius:10px;padding:13px 22px;font-weight:700;font-size:15px;color:#41464E;white-space:nowrap;background:var(--base);display:inline-flex;align-items:center}
-  .plogo{height:30px;width:auto;object-fit:contain;filter:grayscale(100%);opacity:.78;transition:opacity .2s,filter .2s}
-  .plogo:hover{filter:grayscale(0);opacity:1}
+  .plogo{height:34px;width:auto;object-fit:contain;opacity:.82;transition:opacity .2s}
+  .plogo:hover{opacity:1}
   @keyframes scroll{to{transform:translateX(calc(-50% - 9px))}}
 
   /* ---------- Blog ---------- */
