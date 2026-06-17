@@ -54,6 +54,7 @@
     color:var(--accent);margin-bottom:16px;
   }
   h1,h2,h3,h4,.philo,.teamhead,.attitude,.solution .big,.finalcta h2,.post h4,.card h3{word-break:keep-all}
+  .mo{display:none}   /* 모바일 전용 줄바꿈 */
   .btn{
     display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
     padding:13px 22px;border-radius:999px;font-weight:700;font-size:15px;
@@ -83,7 +84,7 @@
   .nav .btn{padding:9px 18px;font-size:14px}
   .navlinks a.btn-primary{color:#fff}
   .placeholder-tag{font-size:9px;color:var(--muted);border:1px dashed var(--border);border-radius:6px;padding:1px 5px;letter-spacing:.04em;vertical-align:middle;margin-left:6px}
-  @media(max-width:780px){.navlinks a:not(.btn){display:none}}
+  @media(max-width:780px){.navlinks a:not(.btn){display:none} .mo{display:inline}}
   @media(max-width:560px){
     .nav{height:60px}
     .logo{font-size:17px;gap:7px}
@@ -288,7 +289,7 @@
     <div class="cards">
       <div class="card reveal">
         <div class="kicker">컴퍼니 빌딩</div>
-        <h3>창업자의 오른팔이 되어, 곁에서 함께 결정합니다.</h3>
+        <h3>창업자의 오른팔이 되어,<br class="mo">곁에서 함께 결정합니다.</h3>
         <p>파트타임 CSO·COO로 합류해, 흩어진 의사결정을 정리하고 초기 실무와 팀 세팅까지 함께합니다. 대표 혼자 짊어지던 짐을 나눠 듭니다.</p>
         <span class="more">자세히 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
@@ -300,14 +301,14 @@
       </div>
       <div class="card reveal">
         <div class="kicker">파운더스랩</div>
-        <h3>마음은 정했는데, 첫 걸음이 안 떨어지는 분께.</h3>
+        <h3>마음은 정했는데,<br class="mo">첫 걸음이 안 떨어지는 분께.</h3>
         <p>회사를 다니며 창업을 준비하는 분, 자기 일을 갖고 싶은 워킹맘 — 결심을 첫 가설과 첫 실행으로 바꾸는 정기 미팅 파트너가 되어, 사업 모델을 갖춘 창업으로 건너가도록 돕습니다.</p>
         <span class="more">자세히 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
       <div class="card reveal">
         <span class="badge">확장 영역</span>
         <div class="kicker">PE 포트폴리오사 지원</div>
-        <h3>포트폴리오사의 다음 단계를, 안에서 함께 풉니다.</h3>
+        <h3>포트폴리오사의 다음 단계를,<br class="mo">안에서 함께 풉니다.</h3>
         <p>이미 자리 잡은 조직이 다음 성장 단계로 넘어갈 때, 의사결정 옆자리에서 변화 관리를 돕습니다. VC·액셀러레이터·PE가 포트폴리오사에 믿고 맡길 수 있는 파트너로 함께합니다.</p>
         <span class="more">자세히 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
