@@ -331,9 +331,36 @@
   .finalcta .cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap}
   .finalcta .btn-primary{background:var(--blue);color:var(--brown)}
   .finalcta .btn-primary:hover{background:var(--on-brown)}
-  .finalcta .para{position:absolute;right:max(24px, calc((100vw - var(--maxw)) / 2));top:50%;transform:translateY(-50%);width:min(30vw,340px);height:min(26vw,290px);pointer-events:none}
-  .finalcta .para svg{width:100%;height:100%}
-  @media(max-width:700px){.finalcta .para{opacity:.18;top:auto;bottom:24px;transform:none;width:180px;height:150px}}
+  .finalcta .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+  .finalcta .copy{padding-top:8px}
+  .finalcta .slogan{font-size:clamp(38px,4.6vw,58px)}
+  .cform{background:var(--base);color:var(--ink);border-radius:var(--r);padding:32px 30px 28px}
+  .cform h3{font-size:19px;font-weight:800;color:var(--brown);letter-spacing:-.02em}
+  .cform .sub{margin-top:6px;font-size:var(--fs-small);color:var(--muted)}
+  .cform .fields{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .cform .full{grid-column:1/-1}
+  .cform label{display:block;font-size:13px;font-weight:700;color:var(--brown);margin-bottom:6px}
+  .cform label em{font-style:normal;color:#C0503F;margin-left:2px}
+  .cform input,.cform select,.cform textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:#fff;border:1px solid var(--border);border-radius:10px;padding:11px 12px;outline:none;transition:border-color .15s}
+  .cform textarea{min-height:120px;resize:vertical;line-height:1.6}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{border-color:var(--brown)}
+  .cform .agree{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--muted);line-height:1.55;margin-top:4px}
+  .cform .agree input{width:16px;height:16px;margin-top:2px;flex:0 0 16px;accent-color:var(--brown)}
+  .cform .agree details{margin-top:4px}
+  .cform .agree summary{cursor:pointer;text-decoration:underline;font-size:12.5px}
+  .cform .agree .policy{margin-top:6px;font-size:12.5px;line-height:1.6}
+  .cform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .cform button{margin-top:18px;width:100%;justify-content:center;border:0;cursor:pointer;background:var(--brown);color:var(--on-brown);font-family:inherit}
+  .cform button:hover{background:#3A271F}
+  .cform button[disabled]{opacity:.6;cursor:default;transform:none}
+  .cform .msg{margin-top:12px;font-size:14px;line-height:1.55}
+  .cform .msg:empty{display:none}
+  .cform .msg.ok{color:#3E6B3A;font-weight:700}
+  .cform .msg.err{color:#C0503F}
+  .cform .cf-alt{margin-top:10px;font-size:12.5px;color:var(--muted);text-align:center}
+  .cform .cf-alt a{text-decoration:underline}
+  @media(max-width:900px){.finalcta .grid{grid-template-columns:1fr;gap:40px}}
+  @media(max-width:520px){.cform{padding:26px 20px 22px}.cform .fields{grid-template-columns:1fr}}
 
   /* ---------- Footer ---------- */
   footer{background:var(--base);padding-block:54px 64px}
@@ -662,15 +689,39 @@
 
 <!-- FINAL CTA -->
 <section id="contact" class="finalcta">
-  <div class="para" aria-hidden="true"><svg viewBox="0 0 100.28 84.64" preserveAspectRatio="xMaxYMid meet"><path d="M0 2.76L34.96 2.76L68.08 61.18C65.78 69.92 57.5 77.74 46 84.64L0 2.76Z" fill="#F5EFE8"/><path d="M64.4 5.06C80.5 0 92.92 0.92 100.28 3.22C99.82 16.56 91.08 29.44 74.52 35.42C67.62 28.06 63.48 17.02 64.4 5.06Z" fill="#A7B89F"/></svg></div>
-  <div class="wrap">
-    <p class="slogan" lang="en">A Brighter Tomorrow,<br>Together.</p>
-    <div class="rule"></div>
-    <h2>좋은 기업가가 더 큰 가능성을 만나는 곳,<br>쉬벤처스가 함께합니다.</h2>
-    <p class="lead">기관 프로그램 운영부터 기업 자문까지, 목적에 맞게 고민하고 설계합니다.</p>
-    <div class="cta">
-      <a class="btn btn-primary btn-arrow" href="mailto:start@sheventures.kr">문의하기 <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <div class="wrap grid">
+    <div class="copy">
+      <p class="slogan" lang="en">A Brighter Tomorrow,<br>Together.</p>
+      <div class="rule"></div>
+      <h2>좋은 기업가가 더 큰 가능성을 만나는 곳,<br>쉬벤처스가 함께합니다.</h2>
+      <p class="lead">기관 프로그램 운영부터 기업 자문까지, 목적에 맞게 고민하고 설계합니다.</p>
     </div>
+    <form class="cform" id="contactForm" novalidate>
+      <h3>문의하기</h3>
+      <p class="sub">남겨 주신 내용을 확인하고 연락드릴게요.</p>
+      <div class="fields">
+        <div><label for="cf-org">기관·회사명<em>*</em></label><input id="cf-org" name="org" required maxlength="100" autocomplete="organization"></div>
+        <div><label for="cf-name">담당자 이름<em>*</em></label><input id="cf-name" name="name" required maxlength="50" autocomplete="name"></div>
+        <div><label for="cf-email">이메일<em>*</em></label><input id="cf-email" name="email" type="email" required maxlength="120" autocomplete="email"></div>
+        <div><label for="cf-phone">연락처</label><input id="cf-phone" name="phone" type="tel" maxlength="40" autocomplete="tel" placeholder="선택"></div>
+        <div class="full"><label for="cf-type">문의 유형<em>*</em></label>
+          <select id="cf-type" name="type" required>
+            <option value="기관 프로그램">기관 창업 프로그램 기획·운영</option>
+            <option value="컨설팅·자문">컨설팅·자문</option>
+            <option value="파운더스랩">파운더스랩</option>
+            <option value="기타">기타</option>
+          </select></div>
+        <div class="full"><label for="cf-msg">문의 내용<em>*</em></label><textarea id="cf-msg" name="message" required maxlength="3000" placeholder="프로그램 일정, 대상, 규모 등 알려 주시면 더 빠르게 안내드릴 수 있어요."></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="cf-web">웹사이트</label><input id="cf-web" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="full agree"><input id="cf-agree" name="agree" type="checkbox" required>
+          <div><label for="cf-agree" style="display:inline;font-weight:500;color:inherit;margin:0">개인정보 수집·이용에 동의합니다.<em>*</em></label>
+            <details><summary>자세히 보기</summary><p class="policy">수집 항목: 기관·회사명, 담당자 이름, 이메일, 연락처(선택)<br>이용 목적: 문의 확인과 회신<br>보유 기간: 문의 처리 후 1년, 이후 지체 없이 파기<br>동의하지 않을 수 있으며, 이 경우 문의 접수가 어렵습니다.</p></details>
+          </div></div>
+      </div>
+      <button type="submit" class="btn btn-arrow">문의 보내기 <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+      <p class="msg" role="status" aria-live="polite"></p>
+      <p class="cf-alt">메일로 직접 보내셔도 돼요. <a href="mailto:start@sheventures.kr">start@sheventures.kr</a></p>
+    </form>
   </div>
 </section>
 
@@ -706,6 +757,31 @@
       gtag('event', 'contact_button_click', { location: where });
     }
   });
+</script>
+<script>
+  (function(){
+    var f=document.getElementById('contactForm'); if(!f) return;
+    var msg=f.querySelector('.msg'), btn=f.querySelector('button[type=submit]');
+    f.addEventListener('submit', async function(e){
+      e.preventDefault();
+      msg.className='msg'; msg.textContent='';
+      var d=Object.fromEntries(new FormData(f).entries());
+      d.agree=f.querySelector('#cf-agree').checked;
+      if(!d.org||!d.name||!d.email||!d.message){ msg.className='msg err'; msg.textContent='필수 항목(*)을 모두 입력해 주세요.'; return; }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)){ msg.className='msg err'; msg.textContent='이메일 주소를 다시 확인해 주세요.'; return; }
+      if(!d.agree){ msg.className='msg err'; msg.textContent='개인정보 수집·이용에 동의해 주세요.'; return; }
+      btn.disabled=true; var label=btn.firstChild.nodeValue; btn.firstChild.nodeValue='보내는 중… ';
+      try{
+        var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+        var j=await r.json().catch(function(){return {};});
+        if(r.ok&&j.ok){
+          f.reset(); msg.className='msg ok'; msg.textContent='문의가 접수됐어요. 확인 후 빠르게 연락드릴게요.';
+          if(typeof gtag==='function') gtag('event','generate_lead',{method:'form',inquiry_type:d.type});
+        } else { msg.className='msg err'; msg.textContent=(j.error||'전송에 실패했어요.')+' start@sheventures.kr로 보내 주셔도 돼요.'; }
+      }catch(err){ msg.className='msg err'; msg.textContent='전송에 실패했어요. 잠시 뒤 다시 시도하시거나 start@sheventures.kr로 보내 주세요.'; }
+      btn.disabled=false; btn.firstChild.nodeValue=label;
+    });
+  })();
 </script>
 </body>
 </html>
