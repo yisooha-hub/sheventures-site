@@ -2,6 +2,15 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMKG5EGD7K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LMKG5EGD7K');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>쉬벤처스 | 창업 멘토링·컨설팅, 창업 프로그램 운영</title>
 <meta name="description" content="기관·액셀러레이터 창업 프로그램 기획과 운영, IR·사업계획서 코칭, GTM·자금조달 전략 자문. 예비창업부터 시리즈 A까지 창업가와 함께합니다.">
@@ -684,5 +693,19 @@
   </div>
 </footer>
 
+<script>
+  // 문의 관련 클릭 추적: 메일 문의(실제 연락 시도)와 페이지 안 문의하기 버튼
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a || typeof gtag !== 'function') return;
+    var href = a.getAttribute('href') || '';
+    var where = a.closest('header') ? 'header' : a.closest('.hero') ? 'hero' : a.closest('#contact') ? 'final_cta' : a.closest('footer') ? 'footer' : 'body';
+    if (href.indexOf('mailto:') === 0) {
+      gtag('event', 'generate_lead', { method: 'email', location: where });
+    } else if (href === '#contact') {
+      gtag('event', 'contact_button_click', { location: where });
+    }
+  });
+</script>
 </body>
 </html>
