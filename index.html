@@ -181,6 +181,11 @@
   .problem p{margin-top:16px;font-size:16.5px;line-height:1.6}
   .problems.two{grid-template-columns:repeat(2,1fr)}
   .problems.two .problem{background:var(--surface);padding:34px 32px}
+  /* 두 카드의 번호·제목·본문·답변 줄을 서로 맞춤 */
+  .problems.two{row-gap:0;column-gap:20px}
+  .problems.two .problem{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-content:start}
+  .problems.two .problem p.ans{align-self:start}
+  @media(max-width:780px){.problems.two .problem{grid-row:auto;grid-template-rows:none;margin-bottom:20px}}
   .problem h3{font-size:21px;font-weight:800;color:var(--brown);margin-top:14px;letter-spacing:-.02em}
   .problem p.ans{margin-top:22px;padding-top:18px;border-top:1px solid var(--border);font-weight:700;color:var(--brown)}
   .problem .ans span{display:block;font-family:var(--wordmark);font-style:italic;font-weight:400;font-size:13.5px;color:var(--blue-ink);margin-bottom:4px}
