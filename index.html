@@ -275,14 +275,20 @@
   .career dt{font-size:12.5px;font-weight:500;color:var(--muted);opacity:.75}
   .career dd{font-size:var(--fs-small);color:var(--ink);line-height:1.5}
   @media(max-width:780px){.team{grid-template-columns:1fr}}
-  .partners-team{margin-top:40px}
-  .partners-team .ptitle{font-size:14px;font-weight:700;color:var(--muted);margin-bottom:14px}
-  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .pcard{border:1px solid var(--border);border-radius:var(--r);padding:22px 22px 20px;min-width:0}
-  .pcard h5{font-size:16px;font-weight:800;color:var(--brown)}
-  .pcard .area{font-size:13px;font-weight:700;color:var(--blue-ink);margin:3px 0 10px}
-  .pcard ul{list-style:none;display:flex;flex-direction:column;gap:4px}
-  .pcard li{font-size:13px;color:var(--muted);line-height:1.45}
+  .partners-team{margin-top:56px;padding-top:40px;border-top:1px solid var(--border)}
+  .partners-team .phead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+  .partners-team .phead h3{font-size:clamp(20px,.6vw + 17px,24px);font-weight:800;color:var(--brown);letter-spacing:-.02em}
+  .partners-team .phead p{font-size:var(--fs-small);color:var(--muted)}
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .pcard{background:var(--surface);border-radius:var(--r);padding:28px 26px 24px;min-width:0;display:flex;flex-direction:column}
+  .pcard .ptop{display:flex;align-items:center;gap:14px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+  .pcard .mono{width:52px;height:52px;flex:0 0 52px;border-radius:50%;background:var(--base);display:grid;place-items:center;font-family:var(--didot);font-size:24px;color:var(--brown)}
+  .pcard .en{font-family:var(--didot);font-size:22px;line-height:1.05;color:var(--brown)}
+  .pcard h5{margin-top:5px;font-size:15px;font-weight:800;color:var(--brown);display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline}
+  .pcard h5 span{font-size:12.5px;font-weight:600;color:var(--muted)}
+  .pcard .area{margin-top:16px;font-size:13.5px;font-weight:700;color:var(--blue-ink)}
+  .pcard ul{margin-top:10px;list-style:none;display:flex;flex-direction:column;gap:7px}
+  .pcard li{font-size:var(--fs-small);color:var(--ink);line-height:1.5}
   @media(max-width:780px){.pgrid{grid-template-columns:1fr}}
   @media(max-width:480px){.member{padding:28px 22px 24px}.mtop{flex-direction:column;align-items:flex-start;gap:16px;padding-right:0}.avatar{width:88px;height:88px;flex-basis:88px}.msym{top:24px;right:22px}}
 
@@ -606,20 +612,20 @@
       </div>
     </div>
     <div class="partners-team">
-      <p class="ptitle">함께하는 파트너</p>
+      <div class="phead"><h3>함께하는 파트너</h3><p>분야별 전문가가 프로그램과 자문에 함께합니다.</p></div>
       <div class="pgrid">
       <div class="pcard">
-        <h5>변장원</h5>
+        <div class="ptop"><div class="mono" aria-hidden="true">B</div><div><p class="en" lang="en">Jangwon Byun</p><h5>변장원<span>Partner</span></h5></div></div>
         <div class="area">액셀러레이팅 · 컴퍼니빌딩</div>
         <ul><li>前 콴티파이인큐베이터 책임심사역</li><li>스타트업 코파운더 2회 · 매각 2회 · 시리즈 A 유치</li><li>국민대 창업학 박사과정</li></ul>
       </div>
       <div class="pcard">
-        <h5>류민경</h5>
+        <div class="ptop"><div class="mono" aria-hidden="true">R</div><div><p class="en" lang="en">Minkyung Ryu</p><h5>류민경<span>Partner</span></h5></div></div>
         <div class="area">브랜딩 · 유통 · 글로벌 진출</div>
         <ul><li>前 라프리카라 대표 · 청년창업사관학교 11기</li><li>前 현대백화점 명품 바이어</li><li>하나은행 소셜벤처 유니버시티 창업 전담 코치</li></ul>
       </div>
       <div class="pcard">
-        <h5>정동훈</h5>
+        <div class="ptop"><div class="mono" aria-hidden="true">J</div><div><p class="en" lang="en">Donghoon Jung</p><h5>정동훈<span>Partner</span></h5></div></div>
         <div class="area">군 창업 · 기술사업화</div>
         <ul><li>공군 복무 · 공군 창업경진대회 창의상</li><li>기술신용평가사 · 창업보육전문매니저</li><li>고려대 창업학 박사과정</li></ul>
       </div>
